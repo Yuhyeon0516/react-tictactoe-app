@@ -2,7 +2,22 @@ import React from "react";
 import "./Square.css";
 
 export default class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
   render() {
-    return <button className="squara">{this.props.value}</button>;
+    return (
+      <button
+        className="squara"
+        onClick={() => {
+          this.setState({ value: "X" });
+        }}
+      >
+        {this.state.value}
+      </button>
+    );
   }
 }
